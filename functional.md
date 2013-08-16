@@ -4,6 +4,7 @@
 ### First-class functions
 
 > 函数是 JavaScript 的一等公民。
+
 这句话可以理解为函数在 JavaScript 中，拥有第一级别的权利。
 
 + 函数可以做哪些事？
@@ -135,12 +136,12 @@ var scope = 0, zero = "global-scope";
 console.log(typeof one);
 console.log(scope);
 
-scope-3 scope-2 scope-1 global-scope
-3
-undefined
-2
-undefined
-1
-undefined
-0
+// scope-3 scope-2 scope-1 global-scope
+// 3
+// undefined
+// 2
+// undefined
+// 1
+// undefined
+// 0
 ```

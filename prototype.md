@@ -1,12 +1,12 @@
 
-## Prototype-based
+## Prototype-based object-oriented
 
 ### Object-based
 
 + JavaScript几乎是完全基于对象的
 + JavaScript的对象可以理解为一个扩展了原型的关联数组
 
-### Prototypes
+### Prototype
 
 + 基于原型的编程，也是面向对象的一种的形式
 + JavaScript使用原型来实现继承，而不是 `class`
@@ -25,3 +25,5 @@
 + 和其它的面向对象语言不同，JavaScript中，定义函数与定义方法并没有区别
 + 一个函数可以作为一个对象的方法，来调用
 	+ 此时，该函数中的 `this` 将指向这个对象
+
+### Inheritance and the prototype chain
