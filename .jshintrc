@@ -1,0 +1,11 @@
+{
+	"curly": true,
+	"evil": true,
+	"latedef": true,
+	"noarg": true,
+	"node": true,
+	"quotmark": true,
+	"sub": true,
+	"trailing": true,
+	"undef": true
+}

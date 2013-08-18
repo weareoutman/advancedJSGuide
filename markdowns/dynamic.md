@@ -29,18 +29,29 @@ var obj = {
 	prop: "value"
 };
 
-obj.prop == obj["prop"]; // true
-
-obj.other = "hehe";
-obj.prop = "haha";
+// 增加方法
+obj.other = function(){};
+// 修改属性
+obj.prop = "new value";
+// 删除属性
 delete obj.prop;
-
-for (var key in obj) {
-	console.log(key, obj[key]);
-}
 ```
 
 ### Reflection
 
-+ 对象的属性或方法的名称是一个字符串键
-+ 大部分属性和方法都可以使用 `for ... in` 进行枚举
+```javascript
+var obj = {
+	foo: "value",
+	bar: function() {
+		return this.foo;
+	}
+};
+
+// 使用字符串访问对象的属性或方法
+console.log(obj.foo === obj["foo"]);
+
+// 遍历对象的属性和方法
+for (var key in obj) {
+	console.log(key, obj[key]);
+}
+```
