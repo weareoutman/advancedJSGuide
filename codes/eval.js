@@ -1,1 +1,0 @@
-var foo = eval('var bar = 1; return bar');
