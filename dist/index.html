@@ -1,0 +1,339 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1024">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>JavaScript 进阶 - weareoutman</title>
+<link href="http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" type="text/css" href="github.css">
+</head>
+<body>
+<div id="impress">
+
+<div id="cover" class="step">
+	<h1>JavaScript 进阶</h1>
+</div>
+<div id="current" class="step">
+	<h2>JavaScript 有前途吗？</h2>
+	<p>所有现代Web浏览器唯一指定编程语言</p>
+	<p>Node.js 盛行</p>
+</div>
+<div id="on-stackoverflow" class="step">
+	<h3>On StackOverflow.com</h3>
+	<p>最热门（提问最多）的标签榜，JavaScript 排在第 4</p>
+	<p>这并不包括排在第 6 的 jQuery</p>
+</div>
+<div id="on-github" class="step">
+	<h3>On GitHub.com</h3>
+	<p>21% 的项目主要编程语言是 JavaScript</p>
+	<p>打星对多的项目 Top 15 中，JavaScript 项目占据 9 个</p>
+	<p>其中包括排在前三的 Bootstrap、Node、jQuery</p>
+</div>
+<div id="popular" class="step">
+	<p>JavaScript 已经是当今世界最流行的编程语言之一</p>
+	<p>
+		JavaScript 开发者们
+		<ul>
+			<li>热衷于开源社区</li>
+			<li>喜欢从中学习</li>
+			<li>并参与贡献</li>
+		</ul>
+	</p>
+</div>
+<div id="misunderstood" class="step">
+	<h3>JavaScript : The World's Most Misunderstood Programming Language</h3>
+	<p>-- Douglas Crockford</p>
+</div>
+<div id="other-eyes" class="step">
+	<ul>
+		<li>在产品眼中：<button onclick="alert('警告：找不到对象！')">点击这里，预知你的未来</button></li>
+	</ul>
+</div>
+<div id="mis-name" class="step">
+	<h3>关于名字 - JavaScript </h3>
+	<p>JavaScript 不是 Java ！</p>
+	<p>JavaScript 是一门解释性脚本语言</p>
+	<p>与 C 相比，它牺牲了性能，以提升动态特性和开发效率</p>
+</div>
+<div id="typecast" class="step">
+	<h3>JavaScript 被定型</h3>
+	<p>它只能在Web浏览器里跑</p>
+	<p>在服务端：Node.js</p>
+	<p>在桌面客户端：Windows 8</p>
+</div>
+<div id="design-error" class="step">
+	<h3>JavaScript 有设计失误</h3>
+	<p>没有一门编程语言是完美的</p>
+	<ul>
+		<li>`+` 号被同时用作数字的加法，以及字符串的拼接</li>
+		<li>`with` 语句</li>
+		<li>`;` 自动插入</li>
+	</ul>
+</div>
+<div id="amateur" class="step">
+	<h3>业余/入门开发者</h3>
+	<ul>
+		<li>门槛低</li>
+		<li>语法陷阱</li>
+		<li>错误的指导</li>
+	</ul>
+</div>
+<div id="object-oriented" class="step">
+	<h3>JavaScript 是面向对象的？</h3>
+	<p>它连 `class` 都没有！</p>
+	<ul>
+		<li>继承</li>
+		<li>聚合</li>
+		<li>封装</li>
+	</ul>
+</div>
+<div id="feature" class="step">
+	<h2>JavaScript 特性</h2>
+	<ul>
+		<li>类似C的结构化编程</li>
+		<li>动态</li>
+		<li>函数式编程</li>
+		<li>基于原型的面向对象</li>
+	</ul>
+</div>
+<div id="structured" class="step">
+	<h3>类似C的结构化编程</h3>
+	<pre><code class="javascript">/* global LiLei, HanMeimei, company */
+// 条件语句
+if (LiLei.money &gt;= 1e6 &amp;&amp; LiLei.house &gt;= 1) {
+	LiLei.marry(HanMeimei);
+} else {
+	LiLei.dieAlone();
+}
+
+// 循环语句
+while (LiLei.money &lt; 1e6 &amp;&amp; LiLei.house === 0) {
+	LiLei.writeCodes();
+}
+
+// 选择语句
+switch (LiLei.workHoursPerDay) {
+	case 0: case 1: /* ... */ case 7:
+		company.fire(LiLei);
+		break;
+	case 8:
+		company.pay(LiLei, 3000);
+		break;
+	case 9:
+		company.pay(LiLei, 4000);
+		break;
+	/* ... */
+	case 24:
+		LiLei.die();
+}</code></pre>
+</div>
+<div id="dynamic" class="step">
+	<h3>JavaScript 动态特性</h3>
+	<h4>动态类型</h4>
+	<p>`type` 与 `value` 关联，而不是与 `variable`</p>
+	<pre><code class="javascript">var foo = 1;
+foo = "A string";
+foo = [1, 2];
+foo = new Date();
+foo = function(){};</code></pre>
+</div>
+<div id="eval" class="step">
+	<h4>Eval</h4>
+	<p>在运行时，将给定的字符串当作代码语句执行</p>
+	<pre><code class="javascript">var foo = eval('var bar = 1; return bar');</code></pre>
+</div>
+<div id="object-alternation" class="step">
+	<h4>对象动态更新</h4>
+	<p>对象的属性和方法都可以在运行时，增加、修改、删除</p>
+	<pre><code class="javascript">var obj = {
+	prop: "value"
+};
+
+// 增加方法
+obj.other = function(){};
+// 修改属性
+obj.prop = "new value";
+// 删除属性
+delete obj.prop;</code></pre>
+</div>
+<div id="reflection" class="step">
+	<h3>反射</h3>
+	<pre><code class="javascript">var obj = {
+	foo: "value",
+	bar: function() {
+		return this.foo;
+	}
+};
+
+// 使用字符串访问对象的属性或方法
+console.log(obj.foo === obj["foo"]);
+
+// 遍历对象的属性和方法
+for (var key in obj) {
+	console.log(key, obj[key]);
+}</code></pre>
+</div>
+<div id="functional" class="step">
+	<h3>函数式编程</h3>
+	<h4>First-class function</h4>
+	<h4>函数是一等公民</h4>
+	<h4>函数在 JS 中是*领导*</h4>
+</div>
+<div id="function-can-do" class="step">
+	<h4>函数可以做哪些事？</h4>
+	<ul>
+		<li>作为参数传递</li>
+		<li>作为另一个函数的返回值</li>
+		<li>赋值给一个变量</li>
+		<li>作为对象的一个方法</li>
+	</ul>
+	<pre><code class="javascript">var bind = function(func, target) {
+	return function() {
+		func.apply(target, arguments);
+	};
+};
+
+var utils = {
+	trim: function(str) {
+		return str.replace(/^\s+|\s+$/g, "");
+	}
+};</code></pre>
+</div>
+<div id="variadic" class="step">
+	<h4>可变参数</h4>
+	<p>函数的参数数量没有限制</p>
+	<p>可以通过参数名或者 `arguments` 对象来访问参数</p>
+	<pre><code class="javascript">(function(){
+	// `arguments` 拥有数组的外观，可以通过数字下标访问各个参数
+	var arg1 = arguments[0], // 1
+		arg2 = arguments[1]; // 2
+
+	// 但它并不是数组
+	console.log(arguments instanceof Array); // false
+	console.log(arguments.slice); // undefined
+
+	// 对 arguments 进行数组相关操作
+	var argElse = Array.prototype.slice.call(arguments, 2);
+	console.log(argElse); // [3, 4]
+})(1, 2, 3, 4);</code></pre>
+</div>
+<div id="scope" class="step">
+	<h4>JavaScript 有两种作用域 `global scope` 和 `function scope`</h4>
+	<p>C语言中的 `block scope` :</p>
+	<pre><code class="c">int function foo(void) {
+	int bar = 1;
+	{
+		int bar = 2;
+	}
+	return bar; // 1
+}</code></pre>
+	<p>JS 中的 `function scope` :</p>
+	<pre><code class="javascript">function foo() {
+	var bar = 1;
+	{
+		/* jshint -W004 */
+		var bar = 2;
+	}
+	return bar; // 2
+}</code></pre>
+</div>
+<div id="scope-chain" class="step">
+	<h4>Scope chain 作用域链</h4>
+	<p>访问一个变量时，会从本地变量和参数开始，逐级向上遍历作用域直到 `global scope`</p>
+	<pre><code class="javascript">var scope = 0, zero = "global-scope";
+(function(){
+	var scope = 1, one = "scope-1";
+	(function(){
+		var scope = 2, two = "scope-2";
+		(function(){
+			var scope = 3, three = "scope-3";
+			// scope-3 scope-2 scope-1 global-scope
+			console.log([three, two, one, zero].join(" "));
+			console.log(scope); // 3
+		})();
+		console.log(typeof three); // undefined
+		console.log(scope); // 2
+	})();
+	console.log(typeof two); // undefined
+	console.log(scope); // 1
+})();
+console.log(typeof one); // undefined
+console.log(scope); // 0</code></pre>
+</div>
+<div id="nested-function" class="step">
+	<h4>Closure 闭包</h4>
+	<p>在一个函数中，定义另一个函数，称为函数嵌套。函数的嵌套将形成一个闭包。</p>
+	<pre><code class="javascript">function bind(func, target) {
+	return function() {
+		func.apply(target, arguments);
+	};
+}</code></pre>
+</div>
+<div id="closure" class="step">
+	<h4>如何理解闭包？</h4>
+	<ul>
+		<li>外部函数不能访问内嵌函数。</li>
+		<li>外部函数也不能访问内嵌函数的参数和变量。</li>
+		<li>而内嵌函数可以访问外部函数的参数和变量。</li>
+		<li>换一个说法：内嵌函数包含了外部函数的作用域。</li>
+	</ul>
+	<pre><code class="javascript">var scope = 0, zero = "global-scope";
+(function(){
+	var scope = 1, one = "scope-1";
+	(function(){
+		var scope = 2, two = "scope-2";
+		(function(){
+			var scope = 3, three = "scope-3";
+			// scope-3 scope-2 scope-1 global-scope
+			console.log([three, two, one, zero].join(" "));
+			console.log(scope); // 3
+		})();
+		console.log(typeof three); // undefined
+		console.log(scope); // 2
+	})();
+	console.log(typeof two); // undefined
+	console.log(scope); // 1
+})();
+console.log(typeof one); // undefined
+console.log(scope); // 0</code></pre>
+</div>
+<div id="closure-2" class="step">
+	<h4>如何理解闭包？</h4>
+	<ul>
+		<li>每次外部函数的调用，内嵌函数都会被创建一次。</li>
+		<li>在它被创建时，外部函数的作用域（包括任何本地变量、参数等上下文），会成为每个内嵌函数对象的内部状态的一部分，即使在外部函数执行完并退出后</li>
+	</ul>
+	<pre><code class="javascript">function bind(func, target) {
+	return function() {
+		func.apply(target, arguments);
+	};
+}
+
+function foo(bar) {
+	console.log(this.count += bar);
+}
+
+var counterA = { count: 0 };
+var counterB = { count: 0 };
+
+var increaseA = bind(foo, counterA);
+var increaseB = bind(foo, counterB);
+
+increaseA(1); // 1
+console.log(counterA.count); // 1
+console.log(counterB.count); // 0
+
+increaseB(2); // 2
+increaseB(3); // 5
+console.log(counterA.count); // 1
+console.log(counterB.count); // 5</code></pre>
+</div>
+
+<script type="text/javascript" src="highlight.pack.js"></script>
+<script type="text/javascript" src="impress.js"></script>
+<script type="text/javascript" src="main.js"></script>
+</div>
+</body>
+</html>

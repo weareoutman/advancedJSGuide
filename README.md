@@ -1,20 +1,22 @@
 # Advanced JavaScript Guide
 
+[View as slides here](http://weareoutman.github.io/advancedJSGuide/)
+
 ## Why JavaScript
 
-+ [JavaScript is popular](/popular.md)
-+ [JavaScript is misunderstood](/misunderstood.md)
++ [JavaScript is popular](/markdowns/popular.md)
++ [JavaScript is misunderstood](/markdowns/misunderstood.md)
 
 ## JavaScript features
 
-+ [C-like Structured](/structured.md)
-+ [Dynamic](/dynamic.md)
-+ [Functional](/functional.md)
-+ [prototype-based object-oriented](/prototype.md)
++ [C-like Structured](/markdowns/structured.md)
++ [Dynamic](/markdowns/dynamic.md)
++ [Functional](/markdowns/functional.md)
++ [prototype-based object-oriented](/markdowns/prototype.md)
 
 ## JavaScript Tools
 
-+ JsHint
++ [JSHint](markdowns/jshint.md)
 + UglifyJS
 + QUnit
 + Grunt
