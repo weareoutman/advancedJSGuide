@@ -1,28 +1,28 @@
-/* global LiLei, HanMeimei, company */
+/* global lilei, hanmeimei, company */
 // 条件语句
-if (LiLei.money >= 1e6 && LiLei.house >= 1) {
-	LiLei.marry(HanMeimei);
+if (lilei.money >= 1e6 && lilei.house >= 1) {
+	lilei.marry(hanmeimei);
 } else {
-	LiLei.dieAlone();
+	lilei.dieAlone();
 }
 
 // 循环语句
-while (LiLei.money < 1e6 && LiLei.house === 0) {
-	LiLei.writeCodes();
+while (lilei.money < 1e6 && lilei.house === 0) {
+	lilei.writeCodes();
 }
 
 // 选择语句
-switch (LiLei.workHoursPerDay) {
+switch (lilei.workHoursPerDay) {
 	case 0: case 1: /* ... */ case 7:
-		company.fire(LiLei);
+		company.fire(lilei);
 		break;
 	case 8:
-		company.pay(LiLei, 3000);
+		company.pay(lilei, 3000);
 		break;
 	case 9:
-		company.pay(LiLei, 4000);
+		company.pay(lilei, 4000);
 		break;
 	/* ... */
 	case 24:
-		LiLei.die();
+		lilei.die();
 }

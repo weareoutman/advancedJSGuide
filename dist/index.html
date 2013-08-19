@@ -80,7 +80,7 @@
 		<li>错误的指导</li>
 	</ul>
 </div>
-<div id="object-oriented" class="step">
+<div id="is-it-object-oriented" class="step">
 	<h3>JavaScript 是面向对象的？</h3>
 	<p>它连 `class` 都没有！</p>
 	<ul>
@@ -100,33 +100,33 @@
 </div>
 <div id="structured" class="step">
 	<h3>类似C的结构化编程</h3>
-	<pre><code class="javascript">/* global LiLei, HanMeimei, company */
+	<pre><code class="javascript">/* global lilei, hanmeimei, company */
 // 条件语句
-if (LiLei.money &gt;= 1e6 &amp;&amp; LiLei.house &gt;= 1) {
-	LiLei.marry(HanMeimei);
+if (lilei.money &gt;= 1e6 &amp;&amp; lilei.house &gt;= 1) {
+	lilei.marry(hanmeimei);
 } else {
-	LiLei.dieAlone();
+	lilei.dieAlone();
 }
 
 // 循环语句
-while (LiLei.money &lt; 1e6 &amp;&amp; LiLei.house === 0) {
-	LiLei.writeCodes();
+while (lilei.money &lt; 1e6 &amp;&amp; lilei.house === 0) {
+	lilei.writeCodes();
 }
 
 // 选择语句
-switch (LiLei.workHoursPerDay) {
+switch (lilei.workHoursPerDay) {
 	case 0: case 1: /* ... */ case 7:
-		company.fire(LiLei);
+		company.fire(lilei);
 		break;
 	case 8:
-		company.pay(LiLei, 3000);
+		company.pay(lilei, 3000);
 		break;
 	case 9:
-		company.pay(LiLei, 4000);
+		company.pay(lilei, 4000);
 		break;
 	/* ... */
 	case 24:
-		LiLei.die();
+		lilei.die();
 }</code></pre>
 </div>
 <div id="dynamic" class="step">
@@ -329,6 +329,75 @@ increaseB(2); // 2
 increaseB(3); // 5
 console.log(counterA.count); // 1
 console.log(counterB.count); // 5</code></pre>
+</div>
+<div id="object-oriented" class="step">
+	<h3>JavaScript 是面向对象的</h3>
+	<p>基于原型的面向对象</p>
+</div>
+<div id="class" class="step">
+	<h4>`class`</h4>
+	<p>JavaScript 中没有 `class` 。</p>
+	<p>`function` 即 `class` 。</p>
+	<pre><code class="javascript">function Person() { }</code></pre>
+</div>
+<div id="instance" class="step">
+	<h4>对象 - 类的实例</h4>
+	<p>使用 `new Func` 将创建一个 `Func` 的实例</p>
+	<pre><code class="javascript">function Person() { }
+var lilei = new Person();
+var hanmeimei = new Person();</code></pre>
+</div>
+<div id="constructor" class="step">
+	<h4>构造器</h4>
+	<p>`function` 即 `constructor`</p>
+	<pre><code class="javascript">function Person() {
+	console.log("A person is born");
+}
+var lilei = new Person();
+console.log(lilei.constructor === Person); // true</code></pre>
+</div>
+<div id="property" class="step">
+	<h4>属性和方法</h4>
+	<p>通过关键字 `this` 或构造器(函数)的 `prototype` 来设置类的属性和方法</p>
+	<pre><code class="javascript">function Person(gender) {
+	this.gender = gender || "unkown";
+}
+
+Person.prototype.sayHello = function() {
+	console.log("Hello world!");
+};
+
+var lilei = new Person();
+var hanmeimei = new Person();</code></pre>
+</div>
+<div id="inheritance" class="step">
+	<h4>继承</h4>
+	<p>通过将子类的 `prototype` 赋值为父类的一个实例，来实现继承</p>
+	<pre><code class="javascript">/* global Person */
+function Student() {
+	Person.call(this);
+}
+
+Student.prototype = new Person();
+// Student.prototype = Object.create(Person.prototype);
+
+Student.prototype.constructor = Student;
+
+Student.prototype.sayHello = function() {
+	console.log("Hello school!");
+};
+
+Student.prototype.sayGoodbye = function() {
+	console.log("Goodbye school!");
+};
+
+var lilei = new Student();
+
+lilei.sayHello();
+lilei.sayGoodbye();
+
+console.log(lilei instanceof Person);  // true
+console.log(lilei instanceof Student); // true</code></pre>
 </div>
 
 <script type="text/javascript" src="highlight.pack.js"></script>

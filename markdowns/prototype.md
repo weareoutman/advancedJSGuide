@@ -1,29 +1,84 @@
 
 ## Prototype-based object-oriented
 
-### Object-based
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Introduction_to_Object-Oriented_JavaScript
 
-+ JavaScript几乎是完全基于对象的
-+ JavaScript的对象可以理解为一个扩展了原型的关联数组
+### Class
 
-### Prototype
+JavaScript 中没有 `class` 。
+`function` 即 `class` 。
 
-+ 基于原型的编程，也是面向对象的一种的形式
-+ JavaScript使用原型来实现继承，而不是 `class`
-	+ 行为重用（继承）是通过复制一个已存在的原型对象来实现的
-+ 通过原型我们可以模拟实现大部分的 `class-based` 的特性
-+ 又被称作 classless, prototype-oriented or instance-based programming
+```javascript
+function Person() { }
+```
 
-### Functions as object constructors
+### 对象 - 类的实例
 
-+ 对象的构造器是函数
-+ 可以理解为，函数同时扮演了两个角色： `class` 和 `function`
-+ `new Foo()` 将创建一个继承了 `Foo` 的原型属性和方法的实例对象
+使用 `new Func` 将创建一个 `Func` 的实例。
 
-### Functions as methods
+```javascript
+function Person() { }
+var lilei = new Person();
+var hanmeimei = new Person();
+```
 
-+ 和其它的面向对象语言不同，JavaScript中，定义函数与定义方法并没有区别
-+ 一个函数可以作为一个对象的方法，来调用
-	+ 此时，该函数中的 `this` 将指向这个对象
+### 构造器
 
-### Inheritance and the prototype chain
+`function` 即 `constructor` 。
+
+```javascript
+function Person() {
+	console.log("A person is born");
+}
+var lilei = new Person();
+console.log(lilei.constructor === Person); // true
+```
+
+### 属性和方法
+
+通过关键字 `this` 或构造器(函数)的 `prototype` 来设置属性和方法
+
+```javascript
+function Person(gender) {
+	this.gender = gender || "unkown";
+}
+
+Person.prototype.sayHello = function() {
+	console.log("Hello world!");
+};
+
+var lilei = new Person();
+var hanmeimei = new Person();
+```
+
+### 继承
+
+JavaScript 中通过将子类的 `prototype` 赋值为父类的一个实例，来实现继承。
+在 ES5 标准中，可以使用 `Object.create()` 实现继承。
+
+```javascript
+function Student() {
+	Person.call(this);
+}
+
+Student.prototype = new Person();
+// Student.prototype = Object.create(Person.prototype);
+
+Student.prototype.constructor = Student;
+
+Student.prototype.sayHello = function() {
+	console.log("Hello school!");
+};
+
+Student.prototype.sayGoodbye = function() {
+	console.log("Goodbye school!");
+};
+
+var lilei = new Student();
+
+lilei.sayHello();
+lilei.sayGoodbye();
+
+console.log(lilei instanceof Person);  // true
+console.log(lilei instanceof Student); // true
+```
