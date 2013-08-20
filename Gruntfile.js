@@ -11,12 +11,13 @@ module.exports = function(grunt) {
 	var slideList = [
 		"cover",
 		"current", "on-stackoverflow", "on-github", "popular",
-		"misunderstood", "other-eyes", "mis-name", "typecast", "design-error", "amateur", "object-oriented",
+		"misunderstood", "other-eyes", "mis-name", "typecast", "design-error", "amateur", "is-it-object-oriented",
 		"feature",
 		"structured",
 		"dynamic", "eval", "object-alternation", "reflection",
 		"functional", "function-can-do", "variadic",
-		"scope", "scope-chain", "nested-function", "closure", "closure-2"
+		"scope", "scope-chain", "nested-function", "closure", "closure-2",
+		"object-oriented", "class", "instance", "constructor", "property", "inheritance"
 	];
 
 	// 遍历获取幻灯片文件名
@@ -31,9 +32,7 @@ module.exports = function(grunt) {
 	var codeList = fs.readdirSync("codes");
 	var codes = {};
 	codeList.forEach(function(name){
-		codes[name.replace(/\.[^\.]+/, "")] = htmlspecialchars(fs.readFileSync("codes/" + name, {
-			encoding: "utf8"
-		}));
+		codes[name.replace(/\.[^\.]+/, "")] = htmlspecialchars(fs.readFileSync("codes/" + name).toString("utf8"));
 	});
 
 	// 配置
