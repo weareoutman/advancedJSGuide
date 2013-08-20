@@ -29,10 +29,10 @@ JSHint 的发起者是 Anton Kovalyov，是社区推动的。
 + `forin` : 要求在 `forin` 循环里使用 `hasOwnProperty()` 过滤属性。
 	+ 避免遍历到不期望的属性（从原型链继承的）。
 + `latedef` : 禁止在一个变量声明前使用它。
-	+ JS 的 `function scope` 会将所有变量和函数声明"悬挂"（[hoisted][]）。
+	+ JS 的 `function scope` 会将所有变量和函数声明"提升"（[hoisted][]）。
 	+ 在一个变量声明前使用它，会导致令人讨厌的错误。
 	+ 设置这个属性为 `"nofunc"` 可以忽略函数声明。
-+ `noarg` : 禁止使用 `arguments.caller` 和 `arguments.callee`。
++ `noarg` : 禁止使用 `arguments.caller` 和 `func.caller`。
 	+ 使用这两个属性将导致代码难以被JS引擎优化。
 	+ 在未来的 JavaScript 中是被启用的。
 + `quotmark` : 引号一致性
