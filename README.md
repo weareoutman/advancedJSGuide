@@ -1,22 +1,24 @@
-# Advanced JavaScript Guide
+# JavaScript 进阶
 
-[View as slides here](http://weareoutman.github.io/advancedJSGuide/)
+[点击这里观看幻灯片报告](http://weareoutman.github.io/advancedJSGuide/)
 
-## Why JavaScript
+## avaScript 有前途吗
 
-+ [JavaScript is popular](/markdowns/popular.md)
-+ [JavaScript is misunderstood](/markdowns/misunderstood.md)
++ [JavaScript 是流行的](/markdowns/popular.md)
++ [JavaScript 被误解了](/markdowns/misunderstood.md)
 
-## JavaScript features
+## JavaScript 特性
 
-+ [C-like Structured](/markdowns/structured.md)
-+ [Dynamic](/markdowns/dynamic.md)
-+ [Functional](/markdowns/functional.md)
-+ [prototype-based object-oriented](/markdowns/prototype.md)
++ [类似C的结构化编程](/markdowns/structured.md)
++ [动态](/markdowns/dynamic.md)
++ [函数式编程](/markdowns/functional.md)
++ [基于原型的面向对象](/markdowns/prototype.md)
 
-## JavaScript Tools
+## [JavaScript 陷阱](/markdowns/traps.md)
 
-+ [JSHint](markdowns/jshint.md)
-+ UglifyJS
-+ QUnit
-+ Grunt
+## JavaScript 工具
+
++ [JSHint](/markdowns/quality.md)
++ [UglifyJS](/markdowns/production.md)
++ [QUnit](/markdowns/test.md)
++ [Grunt](/markdowns/runner.md)

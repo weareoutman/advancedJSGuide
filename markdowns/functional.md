@@ -1,5 +1,5 @@
 
-## Functional
+## 函数式编程
 
 ### First-class functions
 
@@ -29,7 +29,7 @@ var utils = {
 };
 ```
 
-### Variadic functions
+### 可变参数
 
 + 函数的参数数量没有限制
 + 可以通过参数名或者 `arguments` 对象来访问参数
@@ -49,7 +49,7 @@ var utils = {
 })(1, 2, 3);
 ```
 
-### Function scope
+### 函数作用域
 
 JavaScript 有两种作用域 `global scope` 和 `function scope`，而C语言则是 `block scope`
 
@@ -77,7 +77,7 @@ function foo() {
 }
 ```
 
-### Scope chain
+### 作用域链
 
 在 JavaScript 代码中，访问一个变量时，会从本地变量和参数开始，逐级向上遍历作用域直到 `global scope`
 
@@ -111,7 +111,7 @@ console.log(scope);
 // 0
 ```
 
-### Closures
+### 闭包
 
 在一个函数中，定义另一个函数，称为函数嵌套。函数的嵌套将形成一个闭包。
 内嵌的函数是它的外部函数所私有的。

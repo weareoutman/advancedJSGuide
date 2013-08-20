@@ -53,14 +53,28 @@ module.exports = function(grunt) {
 			options: {
 				"jshintrc": ".jshintrc"
 			},
-			all: ["Gruntfile.js", "dist/main.js", "codes/*.js"]
+			dist: ["Gruntfile.js", "dist/main.js", "codes/*.js"]
+		},
+		uglify: {
+			impress: {
+				src: "dist/impress.js",
+				dest: "dist/impress.min.js",
+			}
+		},
+		qunit: {
+			all: ["test/*.html"]
 		}
 	});
 	
 	// 载入任务
 	grunt.loadNpmTasks("grunt-contrib-concat");
 	grunt.loadNpmTasks("grunt-contrib-jshint");
+	grunt.loadNpmTasks("grunt-contrib-uglify");
+	grunt.loadNpmTasks("grunt-contrib-qunit");
 	
 	// 注册任务
-	grunt.registerTask("default", ["jshint:all", "concat:dist"]);
+	grunt.registerTask("default", ["jshint:dist", "concat:dist"]);
+
+	grunt.registerTask("impress", ["uglify:impress"]);
+	grunt.registerTask("test", ["qunit"]);
 };

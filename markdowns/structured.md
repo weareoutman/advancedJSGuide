@@ -1,5 +1,5 @@
 
-## Structured
+## 类似C的结构化编程
 
 JavaScript的结构化编程语法，和C语言非常相似 (if / for / while / switch)
 

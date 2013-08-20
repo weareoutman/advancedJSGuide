@@ -1,5 +1,5 @@
 
-## Syntax traps
+## 语法陷阱
 
 ### `+`
 
@@ -37,7 +37,7 @@ console.log(c + h); // "3" + {}
 console.log(c + i); // "3" + []
 ```
 
-那么 JavaScript 是如何决定一段代码中的 `+` 是数学运算还是字符串拼接呢？
+如何决定一段代码中的 `+` 是数学运算还是字符串拼接？
 
 ```
 a + b:
@@ -237,9 +237,9 @@ function factorial(n) {
 });
 ```
 
-访问 `arguments.callee` 或 `func.caller` 的开销是昂贵的。
-使用它将导致 JS 解释器难以执行优化。
-从 ECMAScript 3 开始，已经支持**有命名函数表达式**。
++ 访问 `arguments.callee` 或 `func.caller` 的开销是昂贵的。
++ 使用它将导致 JS 解释器难以执行优化。
++ 从 ECMAScript 3 开始，已经支持**有命名函数表达式**。
 
 ```javascript
 [1, 2, 3, 4, 5].map(function factorial(n) {

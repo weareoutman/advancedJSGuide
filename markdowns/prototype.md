@@ -1,5 +1,5 @@
 
-## Prototype-based object-oriented
+## 基于原型的面向对象
 
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Introduction_to_Object-Oriented_JavaScript
 

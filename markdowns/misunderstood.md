@@ -1,5 +1,5 @@
 
-## JavaScript is misunderstood
+## JavaScript 被误解了
 
 + 在产品经理的眼中 => 可以设置按钮的动作，甚至能弹出一个警告框
 + 在设计师的眼中 => 我听说过，Java 嘛

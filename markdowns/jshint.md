@@ -46,8 +46,8 @@ JSHint 的发起者是 Anton Kovalyov，是社区推动的。
 
 松散选项：
 
-+ `asi` : 静默引号缺失的警告。
-	+ 自动引号插入，可能导致不期望的结果，减少代码的可阅读性。
++ `asi` : 静默分号缺失的警告。
+	+ 自动分号插入，可能导致不期望的结果，减少代码的可阅读性。
 	+ 但所有浏览器都支持这个 JavaScript 规则。
 + `boss` : 允许在期望是比较运算的地方使用赋值表达式。
 	+ 这种情况更多的是打字错误。
@@ -59,5 +59,7 @@ JSHint 的发起者是 Anton Kovalyov，是社区推动的。
 + `multistr` : 允许多行字符串。
 	+ 多行字符串是危险的。如果你意外的在多行字符串的 `\` 后放置了一个空格，这将导致语法错误。
 
+[jshint]: http://jshint.com
+[jslint]: http://jslint.com
 [hoisted]: http://www.adequatelygood.com/JavaScript-Scoping-and-Hoisting.html
 [strict]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions_and_function_scope/Strict_mode

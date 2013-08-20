@@ -1,7 +1,7 @@
 
-## Dynamic
+## 动态
 
-### Dynamic Typing
+### 动态类型
 
 `type` 与 `value` 关联，而不是与 `variable`
 
@@ -20,7 +20,7 @@ foo = function(){};
 var foo = eval('var bar = 1; return bar');
 ```
 
-### Object Alternation
+### 对象动态更新
 
 + 对象的属性和方法都可以在运行时，增加、修改、删除
 
@@ -37,7 +37,7 @@ obj.prop = "new value";
 delete obj.prop;
 ```
 
-### Reflection
+### 反射
 
 ```javascript
 var obj = {
