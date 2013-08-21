@@ -1,11 +1,4 @@
-
-## 单元测试
-
-### QUnit
-
-QUnit 最初是著名JS库 jQuery 的一部分，后来独立出来，作为一个JS单元测试框架。
-
-```javascript
+/* global test, ok, equal, strictEqual, deepEqual, expect */
 test("traps of +", function() {
 	expect(14);
 
@@ -29,4 +22,3 @@ test("traps of +", function() {
 	strictEqual("3" + {}, "3[object Object]");
 	strictEqual("3" + [], "3");
 });
-```

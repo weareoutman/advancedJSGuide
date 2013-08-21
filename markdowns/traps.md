@@ -6,47 +6,37 @@
 `+` 作为二元运算符时，既可以是数学运算的加法，也可以是字符串的拼接。
 
 ```javascript
-var a = 1,
-	b = 2,
-	c = "3",
-	d = "4",
-	e = null,
-	f = undefined,
-	g = NaN,
-	h = {},
-	i = [];
+console.log(   1 + 2   );
+console.log( "3" + "4" );
 
-console.log(a + b); // 1 + 2
-console.log(c + d); // "3" + "4"
+console.log(   1 + "3" );
+console.log( "3" + 1   );
 
-console.log(a + c); // 1 + "3"
-console.log(c + a); // "3" + 1
+console.log( 1 + null      );
+console.log( 1 + undefined );
+console.log( 1 + NaN       );
 
-console.log(a + e); // 1 + null
-console.log(a + f); // 1 + undefined
-console.log(a + g); // 1 + NaN
+console.log( "3" + null      );
+console.log( "3" + undefined );
+console.log( "3" + NaN       );
 
-console.log(c + e); // "3" + null
-console.log(c + f); // "3" + undefined
-console.log(c + g); // "3" + NaN
+console.log( 1 + {} );
+console.log( 1 + [] );
 
-console.log(a + h); // 1 + {}
-console.log(a + i); // 1 + []
-
-console.log(c + h); // "3" + {}
-console.log(c + i); // "3" + []
+console.log( "3" + {} );
+console.log( "3" + [] );
 ```
 
 如何决定一段代码中的 `+` 是数学运算还是字符串拼接？
 
 ```
 a + b:
-    pa = ToPrimitive(a)
-    pb = ToPrimitive(b)
-    if (pa is string || pb is string)
-       return concat(ToString(pa), ToString(pb))
-    else
-       return add(ToNumber(pa), ToNumber(pb))
+	pa = ToPrimitive(a)
+	pb = ToPrimitive(b)
+	if (pa is string || pb is string)
+		return concat(ToString(pa), ToString(pb))
+	else
+		return add(ToNumber(pa), ToNumber(pb))
 ```
 
 + 收集 `+` 两端的操作数的**原始值**。
@@ -65,7 +55,7 @@ with (document) {
 }
 
 // document.write("foo");
-// document.getElemntById("bar").innerHTML="foobar";
+// document.getElemntById("bar").innerHTML = "foobar";
 // window.alert("Hello world!");
 ```
 
@@ -73,7 +63,6 @@ with (document) {
 
 + JS 解释器引擎难以对代码执行优化
 + 代码可读性差
-+ 可以用闭包等技巧代替
 
 ### `;` 自动插入
 
@@ -210,7 +199,7 @@ function foo() {
 foo();
 ```
 
-### arguments.callee 和 func.caller
+### arguments.callee
 
 递归函数：
 
@@ -229,7 +218,7 @@ function factorial(n) {
 });
 ```
 
-所幸，我们有 `arguments.callee ` ：
+所幸，我们有 `arguments.callee` ：
 
 ```javascript
 [1, 2, 3, 4, 5].map(function(n) {

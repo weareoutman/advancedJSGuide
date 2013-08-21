@@ -1,7 +1,9 @@
 {
+	"browser": true,
 	"curly": true,
 	"evil": true,
 	"latedef": true,
+	"multistr": true,
 	"noarg": true,
 	"node": true,
 	"quotmark": true,

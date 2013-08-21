@@ -59,91 +59,83 @@ JSHint 本身使用 JavaScript 开发，因此既可以运行在浏览器中，�
 强制选项：
 
 <table>
-	<thead>
-		<tr>
-			<th>选项</th>
-			<th>说明</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td>`curly`</td>
-			<td>循环和条件语句块，始终带上 `{ }`</td>
-		</tr>
-		<tr>
-			<td>`eqeqeq`</td>
-			<td>禁止使用 `==` 和 `!=`，而应使用 `===` 和 `!==`</td>
-		</tr>
-		<tr>
-			<td>`es3`</td>
-			<td>使用 ECMAScript 3 规范，以兼容老浏览器 IE 6/7/8</td>
-		</tr>
-		<tr>
-			<td>`forin`</td>
-			<td>要求在 `forin` 循环里使用 `hasOwnProperty()` 过滤属性</td>
-		</tr>
-		<tr>
-			<td>`latedef`</td>
-			<td>禁止在一个变量声明前使用它</td>
-		</tr>
-		<tr>
-			<td>`noarg`</td>
-			<td>禁止使用 `arguments.caller` 和 `func.caller`</td>
-		</tr>
-		<tr>
-			<td>`quotmark`</td>
-			<td>保证引号一致性</td>
-		</tr>
-		<tr>
-			<td>`undef`</td>
-			<td>禁止使用明显未声明的变量</td>
-		</tr>
-		<tr>
-			<td>`strict`</td>
-			<td>要求所有函数运行在 ECMAScript 5 的严格模式下</td>
-		</tr>
-		<tr>
-			<td>`trailing`</td>
-			<td>禁止行尾空白</td>
-		</tr>
-		<tr>
-			<td>`maxdepth`</td>
-			<td>控制代码块的最大嵌套深度</td>
-		</tr>
-		<tr>
-			<td>`maxstatements`</td>
-			<td>控制每个函数的最大语句数</td>
-		</tr>
-	</tbody>
+	<tr>
+		<th>选项</th>
+		<th>说明</th>
+	</tr>
+	<tr>
+		<td>`curly`</td>
+		<td>循环和条件语句块，始终带上 `{ }`</td>
+	</tr>
+	<tr>
+		<td>`eqeqeq`</td>
+		<td>禁止使用 `==` 和 `!=`，而应使用 `===` 和 `!==`</td>
+	</tr>
+	<tr>
+		<td>`es3`</td>
+		<td>使用 ECMAScript 3 规范，以兼容老浏览器 IE 6/7/8</td>
+	</tr>
+	<tr>
+		<td>`forin`</td>
+		<td>要求在 `forin` 循环里使用 `hasOwnProperty()` 过滤属性</td>
+	</tr>
+	<tr>
+		<td>`latedef`</td>
+		<td>禁止在一个变量声明前使用它</td>
+	</tr>
+	<tr>
+		<td>`noarg`</td>
+		<td>禁止使用 `arguments.caller` 和 `func.caller`</td>
+	</tr>
+	<tr>
+		<td>`quotmark`</td>
+		<td>保证引号一致性</td>
+	</tr>
+	<tr>
+		<td>`undef`</td>
+		<td>禁止使用明显未声明的变量</td>
+	</tr>
+	<tr>
+		<td>`strict`</td>
+		<td>要求所有函数运行在 ECMAScript 5 的严格模式下</td>
+	</tr>
+	<tr>
+		<td>`trailing`</td>
+		<td>禁止行尾空白</td>
+	</tr>
+	<tr>
+		<td>`maxdepth`</td>
+		<td>控制代码块的最大嵌套深度</td>
+	</tr>
+	<tr>
+		<td>`maxstatements`</td>
+		<td>控制每个函数的最大语句数</td>
+	</tr>
 </table>
 
 松散选项：
 
 <table>
-	<thead>
-		<tr>
-			<th>选项</th>
-			<th>说明</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td>`asi`</td>
-			<td>允许分号缺失</td>
-		</tr>
-		<tr>
-			<td>`boss`</td>
-			<td>允许在期望是比较运算的地方使用赋值表达式</td>
-		</tr>
-		<tr>
-			<td>`evil`</td>
-			<td>允许使用 `eval`</td>
-		</tr>
-		<tr>
-			<td>`multistr`</td>
-			<td>允许多行字符串（但仍会提示将导致错误的行尾空白）</td>
-		</tr>
-	</tbody>
+	<tr>
+		<th>选项</th>
+		<th>说明</th>
+	</tr>
+	<tr>
+		<td>`asi`</td>
+		<td>允许分号缺失</td>
+	</tr>
+	<tr>
+		<td>`boss`</td>
+		<td>允许在期望是比较运算的地方使用赋值表达式</td>
+	</tr>
+	<tr>
+		<td>`evil`</td>
+		<td>允许使用 `eval`</td>
+	</tr>
+	<tr>
+		<td>`multistr`</td>
+		<td>允许多行字符串（但仍会提示将导致错误的行尾空白）</td>
+	</tr>
 </table>
 
 [jshint]: http://jshint.com

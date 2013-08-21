@@ -46,6 +46,7 @@ table {
 body {
     font-family: 'PT Sans', sans-serif;
     min-height: 740px;
+    color: #333;
 }
 
 b, strong { font-weight: bold }
@@ -83,6 +84,7 @@ a:focus {
     width: 900px;
     padding: 40px;
     margin: 20px auto;
+    opacity: 1;
 
     -webkit-box-sizing: border-box;
     -moz-box-sizing:    border-box;
@@ -91,8 +93,8 @@ a:focus {
     box-sizing:         border-box;
 
     font-family: 'PT Serif', georgia, serif;
-    font-size: 32px;
-    line-height: 1.5;
+    font-size: 24px;
+    line-height: 1.25;
 }
 
 /*
@@ -102,43 +104,100 @@ a:focus {
 */
 .impress-enabled .step {
     margin: 0;
-    display: none;
-    /*opacity: 0.0;
+    /*display: none;*/
+    opacity: 0.3;
 
-    /*-webkit-transition: opacity 1s;
-    -moz-transition:    opacity 1s;
-    -ms-transition:     opacity 1s;
-    -o-transition:      opacity 1s;
-    transition:         opacity 1s;*/
+    -webkit-transition: opacity 400ms ease-in-out 100ms;
+    -moz-transition:    opacity 400ms ease-in-out 100ms;
+    -ms-transition:     opacity 400ms ease-in-out 100ms;
+    -o-transition:      opacity 400ms ease-in-out 100ms;
+    transition:         opacity 400ms ease-in-out 100ms;
 }
 
 .impress-enabled .step.active {
-    /*opacity: 1;*/
-    display: block;
+    opacity: 1;
+    /*display: block;*/
 }
 
 .impress-enabled          { pointer-events: none }
 .impress-enabled #impress { pointer-events: auto }
 
-pre{border:1px solid #b4b4b4;box-shadow:0 0 10px rgba(0,0,0,.4);margin:1em;overflow:hidden;}
-code{font-family:Consolas,monospace;}
-
-h1 {
-	font-size: 56px;
+code {
+    font-family: Consolas, "Liberation Mono", Courier, monospace;
 }
 
-h2 {
-	font-size: 48px;
-}
-
-h3 {
-	font-size: 40px;
+:not(pre) > code {
+    white-space: nowrap;
+    margin: 0 2px;
+    padding: 0 5px;
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+    border-radius: 3px;
 }
 
 pre {
-	font-size: 20px;
+    font-size: 20px;
+    border: 1px solid #b4b4b4;
+    box-shadow: 0 0 10px rgba(0,0,0,.4);
+    margin: 1em;
+    overflow: hidden;
 }
 
-#structured pre {
-	font-size: 16px;
+pre code {
+    white-space: pre-wrap;
+}
+
+h1 {font-size: 56px;}
+h2 {font-size: 48px;}
+h3 {font-size: 40px;}
+h4 {font-size: 32px;}
+pre {font-size: 20px;}
+
+#structured pre {font-size: 16px;}
+
+h1:first-child, h2:first-child, h3:first-child, h4:first-child {
+    color: #06c;
+    font-weight: 700;
+}
+
+h2:first-child, h3:first-child, h4:first-child {
+    border-bottom: 2px solid #ccc;
+    padding-left: 1em;
+    margin-bottom: 1em;
+}
+
+h1, h2, h3, h4, h5, h6, p, ul, dl {
+    padding: 0.5em 0;
+}
+li {
+    padding: 5px 0;
+}
+/*h1 {padding: 20px 0;}
+h2 {padding: 15px 0;}
+h3, ul {padding: 10px 0;}
+h4, p {padding: 5px 0;}*/
+
+ul {list-style-type: disc;}
+li {margin-left: 2em;}
+
+.banner {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    opacity: 0.5;
+
+    -webkit-transition: all 400ms;
+    -moz-transition:    all 400ms;
+    -ms-transition:     all 400ms;
+    -o-transition:      all 400ms;
+    transition:         all 400ms;
+
+    color: #666;
+    font-family: "microsoft yahei";
+}
+
+.impress-on-cover .banner {
+    bottom: 100px;
+    right: 100px;
+    opacity: 1;
 }

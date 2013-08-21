@@ -1,0 +1,7 @@
+a + b:
+	pa = ToPrimitive(a)
+	pb = ToPrimitive(b)
+	if (pa is string || pb is string)
+		return concat(ToString(pa), ToString(pb))
+	else
+		return add(ToNumber(pa), ToNumber(pb))

@@ -5,19 +5,20 @@ function htmlspecialchars(str) {
 	return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 }
 
+function replaceJshintComments(str) {
+	return str.replace(/[ \t]*\/\*\s*(jshint|global)\s+[\s\w\,\:\-]+\*\/(?:\r?\n|\r)/, "");
+}
+
 module.exports = function(grunt) {
 
 	// 幻灯片名称列表
 	var slideList = [
 		"cover",
-		"current", "on-stackoverflow", "on-github", "popular",
-		"misunderstood", "other-eyes", "mis-name", "typecast", "design-error", "amateur", "is-it-object-oriented",
-		"feature",
-		"structured",
-		"dynamic", "eval", "object-alternation", "reflection",
-		"functional", "function-can-do", "variadic",
-		"scope", "scope-chain", "nested-function", "closure", "closure-2",
-		"object-oriented", "class", "instance", "constructor", "property", "inheritance"
+		"current", /*"popular",*/ "misunderstood",
+		"feature", "structured", "dynamic", "functional", "scope", "closure",
+		"object-oriented", "class", "instance", "constructor", "property", "inheritance",
+		"traps", "quality", "test", "automation",
+		"thanks"
 	];
 
 	// 遍历获取幻灯片文件名
@@ -29,11 +30,17 @@ module.exports = function(grunt) {
 	slides.push("src/outro.html");
 
 	// 遍历获取示例代码文件内容
-	var codeList = fs.readdirSync("codes");
 	var codes = {};
-	codeList.forEach(function(name){
-		codes[name.replace(/\.[^\.]+/, "")] = htmlspecialchars(fs.readFileSync("codes/" + name).toString("utf8"));
+	var codeDirs = ["codes", "bad-codes"];
+	codeDirs.forEach(function(dir){
+		var codeList = fs.readdirSync(dir);
+		codeList.forEach(function(name){
+			var key = name.replace(/\.[^\.]+/, "");
+			codes[key] = replaceJshintComments(htmlspecialchars(fs.readFileSync(dir + "/" + name).toString("utf8")));
+		});
 	});
+
+	codes.Gruntfile = htmlspecialchars(fs.readFileSync("Gruntfile.js").toString("utf8"));
 
 	// 配置
 	grunt.initConfig({
@@ -41,6 +48,7 @@ module.exports = function(grunt) {
 		codes: codes,
 		concat: {
 			options: {
+				separator: "\n\n",
 				process: true
 			},
 			dist: {
@@ -65,13 +73,13 @@ module.exports = function(grunt) {
 			all: ["test/*.html"]
 		}
 	});
-	
+
 	// 载入任务
 	grunt.loadNpmTasks("grunt-contrib-concat");
 	grunt.loadNpmTasks("grunt-contrib-jshint");
 	grunt.loadNpmTasks("grunt-contrib-uglify");
 	grunt.loadNpmTasks("grunt-contrib-qunit");
-	
+
 	// 注册任务
 	grunt.registerTask("default", ["jshint:dist", "concat:dist"]);
 
