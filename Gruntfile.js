@@ -1,4 +1,3 @@
-
 var fs = require("fs");
 
 function htmlspecialchars(str) {
@@ -29,6 +28,9 @@ module.exports = function(grunt) {
 	slides.unshift("src/intro.html");
 	slides.push("src/outro.html");
 
+	var pages = slides.slice(0);
+	pages.splice(-1, 0, "src/no-impress.html");
+
 	// 遍历获取示例代码文件内容
 	var codes = {};
 	var codeDirs = ["codes", "bad-codes"];
@@ -55,6 +57,10 @@ module.exports = function(grunt) {
 				// src: ["src/intro.html", "slides/cover.html", "src/outro.html"],
 				src: slides,
 				dest: "dist/index.html"
+			},
+			page: {
+				src: pages,
+				dest: "dist/page.html"
 			}
 		},
 		jshint: {
@@ -81,7 +87,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks("grunt-contrib-qunit");
 
 	// 注册任务
-	grunt.registerTask("default", ["jshint:dist", "concat:dist"]);
+	grunt.registerTask("default", ["jshint", "concat:dist", "concat:page"]);
 
 	grunt.registerTask("impress", ["uglify:impress"]);
 	grunt.registerTask("test", ["qunit"]);
