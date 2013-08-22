@@ -10,29 +10,40 @@
 <link rel="stylesheet" type="text/css" href="github.css">
 </head>
 <body>
-<div id="impress" data-transition-duration="400">
+<div id="impress" data-transition-duration="500">
 
 <div id="cover" class="step">
 	<h1>JavaScript 进阶</h1>
 </div>
 
+<div id="goal" class="step">
+	<h2>目标</h2>
+	<ul>
+		<li>探讨 JavaScript 特性</li>
+		<li>消除对 JavaScript 的误解</li>
+		<li>分析易被忽视的 JavaScript 语法陷阱</li>
+		<li>介绍 JSHint、QUnit、Grunt 等工具</li>
+	</ul>
+</div>
+
 <div id="current" class="step">
-	<h2>JavaScript 现状</h2>
-	<p>现代Web浏览器唯一指定编程语言</p>
-	<p>Node.js 盛行</p>
-	<p>JavaScript 是当今世界最流行的编程语言之一</p>
+	<h2>JavaScript</h2>
+	<ul>
+		<li>现代Web浏览器唯一指定编程语言</li>
+		<li>Node.js 盛行</li>
+	</ul>
+	<p>JavaScript 已经是当今世界最流行的编程语言之一</p>
 </div>
 
 <div id="misunderstood" class="step">
 	<h3>JavaScript : 世界上被误解最多的编程语言</h3>
-	<p style="text-align:right;padding-right:4em;">-- Douglas Crockford</p>
 </div>
 
 <div id="mis-name" class="step">
 	<h4>关于名字 - JavaScript </h4>
 	<dl>
-		<dt>JavaScript 不是 Java ！</dt>
-		<dt>JavaScript 是一门解释性脚本语言</dt>
+		<dt><strong class="red">Java</strong>Script 跟 Java 没有关系！</dt>
+		<dt>Java<strong class="red">Script</strong> 是一门解释性脚本语言</dt>
 		<dd>与 C 相比，它牺牲了性能，以提升动态特性和开发效率</dd>
 	</dl>
 </div>
@@ -50,9 +61,9 @@
 	<h3>JavaScript 有设计上的失误</h3>
 	<p>没有一门编程语言是完美的</p>
 	<ul>
-		<li><code>+</code> 号被同时用作数字的加法，以及字符串的拼接</li>
+		<li><code>+</code> 加号被同时用作数字的加法，以及字符串的拼接</li>
 		<li><code>with</code> 语句</li>
-		<li><code>;</code> 自动插入</li>
+		<li><code>;</code> 分号自动插入</li>
 	</ul>
 </div>
 
@@ -67,7 +78,7 @@
 
 <div id="is-it-object-oriented" class="step">
 	<h3>JavaScript 是面向对象的？</h3>
-	<p>它连 <code>class</code> 都没有！</p>
+	<p>它连 <code class="red">class</code> 都没有！</p>
 </div>
 
 <div id="feature" class="step">
@@ -83,14 +94,14 @@
 <div id="structured" class="step">
 	<h3>类似C的结构化编程</h3>
 	<pre><code class="javascript">// 条件语句
-if (lilei.money &gt;= 1e6 &amp;&amp; lilei.house &gt;= 1) {
+if (lilei.money &gt;= 1000000 &amp;&amp; lilei.house &gt;= 1) {
 	lilei.marry(hanmeimei);
 } else {
 	lilei.dieAlone();
 }
 
 // 循环语句
-while (lilei.money &lt; 1e6 &amp;&amp; lilei.house === 0) {
+while (lilei.money &lt; 1000000 &amp;&amp; lilei.house === 0) {
 	lilei.writeCodes();
 }
 
@@ -112,7 +123,7 @@ switch (lilei.workHoursPerDay) {
 </div>
 
 <div id="dynamic" class="step">
-	<h3>JavaScript 动态特性</h3>
+	<h3>动态</h3>
 	<ul>
 		<li>动态类型</li>
 		<li>Eval</li>
@@ -144,7 +155,7 @@ function sayGoodbye() {}
 
 <div id="object-alternation" class="step">
 	<h4>对象动态更新</h4>
-	<p>对象的属性和方法都可以在运行时，增加、修改、删除</p>
+	<p>对象的属性和方法都可以<span class="underline">在运行时</span>，增加、修改、删除</p>
 	<pre><code class="javascript">var obj = {
 	prop: "value"
 };
@@ -178,16 +189,16 @@ for (var key in obj) {
 <div id="functional" class="step">
 	<h3>函数式编程</h3>
 	<h4>First-class function</h4>
-	<p>函数是 JavaScript 中的一等公民</p>
+	<p>函数是 JavaScript 中的<span class="red">一等公民</span></p>
 </div>
 
 <div id="function-can-do" class="step">
 	<h4>函数可以做哪些事？</h4>
 	<ul>
-		<li>作为参数传递</li>
-		<li>作为另一个函数的返回值</li>
-		<li>赋值给一个变量</li>
-		<li>作为对象的一个方法</li>
+		<li>作为<span class="underline">参数</span>传递</li>
+		<li>作为另一个函数的<span class="underline">返回值</span></li>
+		<li>赋值给一个<span class="underline">变量</span></li>
+		<li>作为对象的一个<span class="underline">方法</span></li>
 	</ul>
 	<pre><code class="javascript">var bind = function(func, target) {
 	return function() {
@@ -204,7 +215,7 @@ var utils = {
 
 <div id="variadic" class="step">
 	<h4>可变参数</h4>
-	<p>函数的参数数量没有限制</p>
+	<p>函数的参数数量<span class="underline">没有限制</span></p>
 	<p>可以通过参数名或者 <code>arguments</code> 对象来访问参数</p>
 	<pre><code class="javascript">(function(){
 	// `arguments` 拥有数组的外观，可以通过数字下标访问各个参数
@@ -215,7 +226,7 @@ var utils = {
 	console.log(arguments instanceof Array); // false
 	console.log(arguments.slice); // undefined
 
-	// 对 arguments 进行数组相关操作
+	// 对 `arguments` 进行数组相关操作
 	var argElse = Array.prototype.slice.call(arguments, 2);
 	console.log(argElse); // [3, 4]
 })(1, 2, 3, 4);</code></pre>
@@ -231,7 +242,7 @@ var utils = {
 	}
 	return bar; // 1
 }</code></pre>
-	<p>JS 中的 <code>function scope</code> :</p>
+	<p>JavaScript 中的 <code class="red">function scope</code> :</p>
 	<pre><code class="javascript">function foo() {
 	var bar = 1;
 	{
@@ -242,8 +253,8 @@ var utils = {
 </div>
 
 <div id="scope-chain" class="step">
-	<h4>Scope chain 作用域链</h4>
-	<p>访问一个变量时，会从本地变量和参数开始，逐级向上遍历作用域直到 <code>global scope</code></p>
+	<h4>作用域链 Scope chain</h4>
+	<p>访问一个变量时，会从本地变量和参数开始，<span class="underline">逐级向上遍历作用域</span>直到 <code>global scope</code></p>
 	<pre><code class="javascript">var scope = 0, zero = "global-scope";
 (function(){
 	var scope = 1, one = "scope-1";
@@ -266,7 +277,7 @@ console.log(scope); // 0</code></pre>
 </div>
 
 <div id="nested-function" class="step">
-	<h4>Closure 闭包</h4>
+	<h4>闭包 Closure</h4>
 	<p>在一个函数中，定义另一个函数，称为函数嵌套。函数的嵌套将形成一个闭包。</p>
 	<pre><code class="javascript">function bind(func, target) {
 	return function() {
@@ -343,7 +354,7 @@ console.log(counterB.count); // 5</code></pre>
 
 <div id="class" class="step">
 	<h4>类</h4>
-	<p>JavaScript 中没有 <code>class</code> ，<code>function</code> 即 <code>class</code></p>
+	<p>JavaScript 中没有 <code>class</code> ，<span class="underline" style="padding-bottom:3px;"><code>function</code> 即 <code>class</code></span></p>
 	<pre><code class="javascript">function Person() { }</code></pre>
 </div>
 
@@ -376,8 +387,9 @@ Person.prototype.sayHello = function() {
 	console.log("Hello world!");
 };
 
-var lilei = new Person();
-var hanmeimei = new Person();</code></pre>
+var lilei = new Person("male");
+console.log(lilei.gender);
+lilei.sayHello();</code></pre>
 </div>
 
 <div id="inheritance" class="step">
@@ -409,6 +421,55 @@ console.log(lilei instanceof Person);  // true
 console.log(lilei instanceof Student); // true</code></pre>
 </div>
 
+<div id="how-inheritance-works" class="step">
+	<h4>基于原型的继承是如何实现的？</h4>
+</div>
+
+<div id="prototype-chain" class="step">
+	<h4>原型链 Scope chain</h4>
+	<p>访问一个对象的属性时，会先从自身属性开始，<span class="underline">向上追溯原型链</span>，<br>直到找到这个属性，或者遇到 null 为止</p>
+	<pre><code class="javascript">// lilei --&gt; student --&gt; person --&gt; Object.prototype --&gt; null
+
+var person = {
+	gender: "unkown",
+	sayHello: function() {
+		console.log("Hello world!");
+	},
+	walk: function() {
+		console.log("I am walking");
+	}
+};
+
+var student = Object.create(person);
+
+student.sayHello = function() {
+	console.log("Hello school!");
+};
+student.study = function() {
+	console.log("I am studying!");
+};
+
+var lilei = Object.create(student);
+lilei.gender = "male";
+
+console.log(lilei.gender);
+lilei.walk();
+lilei.sayHello();
+lilei.study();
+
+console.log(person.gender);
+delete lilei.gender;
+console.log(lilei.gender);
+console.log(person.gender);
+
+// lilei --&gt; student --&gt; person --&gt; Object.prototype --&gt; null
+
+console.log(student.isPrototypeOf(lilei)); // true
+console.log(person.isPrototypeOf(student)); // true
+console.log(Object.prototype.isPrototypeOf(person)); // true
+console.log(null === Object.prototype.__proto__); // true</code></pre>
+</div>
+
 <div id="traps" class="step">
 	<h2>小心，JavaScript 陷阱重重</h2>
 </div>
@@ -416,23 +477,23 @@ console.log(lilei instanceof Student); // true</code></pre>
 <div id="traps-plus" class="step">
 	<h4><code>+</code> 加号</h4>
 	<p>作为二元运算符时，它既是数学运算的加法，也是字符串的拼接</p>
-	<pre><code class="javascript">console.log(   1 + 2   );
-console.log( "3" + "4" );
-
+	<pre><code class="javascript">console.log(   1 + 2   ); // 3
+console.log( "3" + "4" ); // "34"
+// 2
 console.log(   1 + "3" );
 console.log( "3" + 1   );
-
+// 3
 console.log( 1 + null      );
 console.log( 1 + undefined );
 console.log( 1 + NaN       );
-
+// 4
 console.log( "3" + null      );
 console.log( "3" + undefined );
 console.log( "3" + NaN       );
-
+// 5
 console.log( 1 + {} );
 console.log( 1 + [] );
-
+// 6
 console.log( "3" + {} );
 console.log( "3" + [] );</code></pre>
 </div>
@@ -448,15 +509,15 @@ console.log( "3" + [] );</code></pre>
 	else
 		return add(ToNumber(pa), ToNumber(pb))</code></pre>
 	<ul>
-		<li>收集 <code>+</code> 两端的操作数的**原始值**</li>
-		<li>如果其中之一是字符串，则进行字符串拼接</li>
+		<li>收集 <code>+</code> 两端的操作数的<span class="underline">原始值</span></li>
+		<li>如果<span class="underline">其中之一是字符串</span>，则进行字符串拼接</li>
 		<li>否则，执行数学加法</li>
 	</ul>
 </div>
 
 <div id="with" class="step">
 	<h4><code>with</code></h4>
-	<p>将一个语句块的上下文绑定到一个指定对象</p>
+	<p>将一个语句块的上下文绑定为一个指定对象</p>
 	<pre><code class="javascript">with (document) {
 	write("foo");
 	getElemntById("bar").innerHTML = "foobar";
@@ -470,7 +531,7 @@ console.log( "3" + [] );</code></pre>
 
 <div id="dont-use-with" class="step">
 	<h4><code>with</code></h4>
-	<p>不推荐使用 <code>with</code> 语句</p>
+	<p><span class="red">不推荐</span>使用 <code>with</code> 语句</p>
 	<ul>
 		<li>JS 解释器引擎难以对代码执行优化</li>
 		<li>代码可读性差</li>
@@ -500,7 +561,7 @@ function bar() { return "foo" }</code></pre>
 
 <div id="bad-asi" class="step">
 	<h4><code>;</code> 分号自动插入</h4>
-	<p>过于依赖分号自动插入，将带来一些潜在问题</p>
+	<p>过于依赖分号自动插入，将带来一些<span class="underline">潜在问题</span></p>
 	<pre><code class="javascript">function foo() {
 	return
 	{
@@ -546,7 +607,8 @@ alert(a);</code></pre>
 
 <div id="hoisted" class="step">
 	<h4>声明提升</h4>
-	<p>变量的声明、函数的声明将提升到当前函数主体的顶部，而不管这个声明语句是否出现在了不可到达的地方</p>
+	<p>变量、函数的<span class="underline">声明将提升到</span>当前函数主体的<span class="underline">顶部</span>，<br>
+	而<span class="underline">不管</span>这个声明语句<span class="underline">是否</span>出现在了<span class="underline">不可到达</span>的地方</p>
 	<div class="code-2-col">
 		<pre><code class="javascript">var foo = 1;
 function bar() {
@@ -600,7 +662,7 @@ function sayGoodbye() {}
 
 <div id="dont-use-eval" class="step">
 	<h4><code>eval</code></h4>
-	<p>不推荐使用 <code>eval</code></p>
+	<p><span class="red">不推荐</span>使用 <code>eval</code></p>
 	<ul>
 		<li>JS 解释器引擎难以对代码执行优化</li>
 		<li><code>eval</code> 中传递的字符串中大多包含用户输入数据，易受攻击</li>
@@ -653,7 +715,7 @@ foo();</code></pre>
 
 <div id="anonymous" class="step">
 	<h4><code>arguments.callee</code></h4>
-	<p>不想污染命名空间，匿名函数如何递归？</p>
+	<p>不想<span class="underline">污染命名空间</span>，匿名函数如何递归？</p>
 	<pre><code class="javascript">[1, 2, 3, 4, 5].map(function(n) {
 	return n &lt;= 1 ? 1 : /* what goes here? */ (n - 1) * n;
 });</code></pre>
@@ -669,11 +731,11 @@ foo();</code></pre>
 
 <div id="dont-use-callee" class="step">
 	<h4><code>arguments.callee</code></h4>
-	<p>不推荐使用 <code>arguments.callee</code></p>
+	<p><span class="red">不推荐</span>使用 <code>arguments.callee</code></p>
 	<ul>
 		<li>访问 <code>arguments.callee</code> 的开销是昂贵的</li>
 		<li>使用它将导致 JS 解释器难以执行优化</li>
-		<li>从 ECMAScript 3 开始，已经支持**命名函数表达式**</li>
+		<li>从 ECMAScript 3 开始，已经支持<span class="underline">命名函数表达式</span></li>
 	</ul>
 </div>
 
@@ -683,6 +745,22 @@ foo();</code></pre>
 	<pre><code class="javascript">[1, 2, 3, 4, 5].map(function factorial(n) {
 	return n &lt;= 1 ? 1 : factorial(n - 1) * n;
 });</code></pre>
+</div>
+
+
+<div id="traps-summary" class="step">
+	<h3>JavaScript 陷阱</h3>
+	<ul>
+		<li>加号</li>
+		<li>with</li>
+		<li>分号自动插入</li>
+		<li>声明提升</li>
+		<li>eval</li>
+		<li>多行字符串</li>
+		<li>变量泄漏</li>
+		<li>arguments.callee</li>
+		<li>...</li>
+	</ul>
 </div>
 
 <div id="quality" class="step">
@@ -740,20 +818,19 @@ foo();</code></pre>
 
 <div id="quality-tool" class="step">
 	<h3>代码质量工具</h3>
-	<p>JavaScript 中一款优秀的代码质量工具 -- JSHint</p>
-	<p>它帮助检测 JavaScript 代码的错误和潜在问题</p>
+	<p>我们需要一款优秀的代码质量工具</p>
+	<p>来检测我们的 JavaScript 代码中的错误和潜在问题</p>
 </div>
 
 <div id="jshint" class="step">
 	<h4>JSHint</h4>
-	<p>JSHint 是由 JSLint 分叉（fork）而来的<br>
-	( JSLint 的作者是著名 JS 权威 Douglas Crockford )<br>
-	JSHint 的发起者是 Anton Kovalyov，JSHint 是社区推动的</p>
+	<p><span class="underline">JSHint</span> 是由 <span class="underline">JSLint</span> 分叉（fork）而来的，是<span class="underline">社区推动</span>的</p>
+	<p style="margin-left:2em;font-size:80%;color:#999;">( JSLint 的作者是著名 JS 权威 Douglas Crockford )</p>
 </div>
 
 <div id="jshint-runs-on" class="step">
 	<h4>JSHint</h4>
-	<p>JSHint 本身使用 JavaScript 开发<br>
+	<p>JSHint 本身使用 JavaScript 开发，<br>
 	因此既可以运行在浏览器中，也可以运行在 Node.js 平台</p>
 	<ul>
 		<li>在官方网站上粘贴代码，点击按钮</li>
@@ -852,7 +929,8 @@ foo();</code></pre>
 <div id="unit-test" class="step">
 	<h2>单元测试</h2>
 	<h3>QUnit</h3>
-	<p>QUnit 最初是著名JS库 jQuery 的一部分，后来独立出来作为一个JS单元测试框架</p>
+	<p>QUnit 最初是著名JS库 jQuery 的一部分，<br>
+	后来独立了出来，作为一个JS单元测试框架</p>
 </div>
 
 <div id="unit-test-example" class="step">
@@ -888,6 +966,35 @@ foo();</code></pre>
 	<p>"grunt" 的意思是 "打呼噜"，其目标就是让开发者们一劳永逸</p>
 </div>
 
+<div id="grunt-start" class="step">
+	<h3>开始使用 Grunt</h3>
+	<p>Grunt 运行在 Node.js 平台，Grunt 及其插件都通过 npm 安装和管理</p>
+	<ul>
+		<li>
+			安装 Node.js [<a href="http://nodejs.org/">http://nodejs.org/</a>]
+		</li>
+		<li>
+			安装 grunt-cli 命令行界面
+			<pre><code class="shell">npm install -g grunt-cli</code></pre>
+		</li>
+		<li>
+			在一个已存在的 grunt 项目中使用（已有 <code>package.json</code> 和 <code>Gruntfile.js</code> 文件）
+			<ol>
+				<li>执行 <code>npm install</code> ，安装依赖库</li>
+				<li>执行 <code>grunt</code></li>
+			</ol>
+		</li>
+		<li>
+			准备一个新的 grunt 项目
+			<ul style="list-style-type:none;">
+				<li><code>package.json</code> ：管理作为 npm 模块项目的配置</li>
+				<li><code>Gruntfile.js</code> ：配置、定义、载入 grunt 任务</li>
+				<li><code>npm install &lt;module&gt; --save-dev</code> ：安装一个模块并保存依赖配置到 <code>package.json</code></li>
+			</ul>
+		</li>
+	</ul>
+</div>
+
 <div id="grunt-example" class="step">
 	<h3>Grunt</h3>
 	<p><code>Gruntfile.js</code> 示例</p>
@@ -921,9 +1028,6 @@ module.exports = function(grunt) {
 	slides.unshift("src/intro.html");
 	slides.push("src/outro.html");
 
-	var pages = slides.slice(0);
-	pages.splice(-1, 0, "src/no-impress.html");
-
 	// 遍历获取示例代码文件内容
 	var codes = {};
 	var codeDirs = ["codes", "bad-codes"];
@@ -950,10 +1054,6 @@ module.exports = function(grunt) {
 				// src: ["src/intro.html", "slides/cover.html", "src/outro.html"],
 				src: slides,
 				dest: "dist/index.html"
-			},
-			page: {
-				src: pages,
-				dest: "dist/page.html"
 			}
 		},
 		jshint: {
@@ -980,7 +1080,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks("grunt-contrib-qunit");
 
 	// 注册任务
-	grunt.registerTask("default", ["jshint", "concat:dist", "concat:page"]);
+	grunt.registerTask("default", ["jshint", "concat:dist"]);
 
 	grunt.registerTask("impress", ["uglify:impress"]);
 	grunt.registerTask("test", ["qunit"]);
@@ -1004,12 +1104,14 @@ module.exports = function(grunt) {
 	</ul>
 </div>
 
-<div id="about-this-presentation" class="step">
+<div id="about-this" class="step">
 	<h2>关于本演示文稿</h2>
 	<dl>
 		<dd>源代码托管在 <a href="https://github.com/weareoutman/advancedJSGuide">https://github.com/weareoutman/advancedJSGuide</a></dd>
 		<dd>在线演示版本 <a href="http://weareoutman.github.io/advancedJSGuide/">http://weareoutman.github.io/advancedJSGuide/</a></dd>
-		<dd>在线普通版本 <a href="http://weareoutman.github.io/advancedJSGuide/">http://weareoutman.github.io/advancedJSGuide/page.html</a></dd>
+		<dd>在线普通版本 <a href="http://weareoutman.github.io/advancedJSGuide/?impress=no">http://weareoutman.github.io/advancedJSGuide/?impress=no</a></dd>
+		<dd>&nbsp;</dd>
+		<dd>推荐阅读 <a href="https://github.com/dypsilon/frontend-dev-bookmarks">https://github.com/dypsilon/frontend-dev-bookmarks</a></dd>
 	</dl>
 </div>
 
@@ -1023,7 +1125,7 @@ module.exports = function(grunt) {
 	研发中心 - 王沈伟
 </div>
 
-<script type="text/javascript" src="impress.js"></script>
+<script type="text/javascript" src="impress.min.js"></script>
 <script type="text/javascript" src="highlight.pack.js"></script>
 <script type="text/javascript" src="main.js"></script>
 </body>
