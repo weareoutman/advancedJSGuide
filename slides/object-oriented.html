@@ -32,3 +32,13 @@
 	<p>通过将子类的 <code>prototype</code> 赋值为父类的一个实例，来实现继承</p>
 	<pre><code class="javascript"><%= codes.inheritance %></code></pre>
 </div>
+
+<div id="how-inheritance-works" class="step">
+	<h4>基于原型的继承是如何实现的？</h4>
+</div>
+
+<div id="prototype-chain" class="step">
+	<h4>原型链 Scope chain</h4>
+	<p>访问一个对象的属性时，会先从自身属性开始，<span class="underline">向上追溯原型链</span>，<br>直到找到这个属性，或者遇到 null 为止</p>
+	<pre><code class="javascript"><%= codes.prototype_chain %></code></pre>
+</div>

@@ -158,7 +158,8 @@ pre {font-size: 20px;}
 
 #structured pre, #closure pre, #closure-2 pre, #inheritance pre {font-size: 16px;}
 #closure-2 pre {height:450px; overflow-y:auto;}
-#grunt-example pre {height:496px; overflow-y:auto; font-size: 18px;}
+#grunt-example pre {height:496px; overflow-y:auto; font-size: 16px;}
+#prototype-chain pre {height:496px; overflow-y:auto; font-size: 18px;}
 #grunt-start p,#grunt-start li {font-size: 18px;}
 
 h1:first-child, h2:first-child, h3:first-child, h4:first-child {

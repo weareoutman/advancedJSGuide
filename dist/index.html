@@ -16,6 +16,16 @@
 	<h1>JavaScript 进阶</h1>
 </div>
 
+<div id="goal" class="step">
+	<h2>目标</h2>
+	<ul>
+		<li>探讨 JavaScript 特性</li>
+		<li>消除对 JavaScript 的误解</li>
+		<li>分析易被忽视的 JavaScript 语法陷阱</li>
+		<li>介绍 JSHint、QUnit、Grunt 等工具</li>
+	</ul>
+</div>
+
 <div id="current" class="step">
 	<h2>JavaScript</h2>
 	<ul>
@@ -27,7 +37,6 @@
 
 <div id="misunderstood" class="step">
 	<h3>JavaScript : 世界上被误解最多的编程语言</h3>
-	<p style="text-align:right;padding-right:4em;">-- Douglas Crockford</p>
 </div>
 
 <div id="mis-name" class="step">
@@ -52,9 +61,9 @@
 	<h3>JavaScript 有设计上的失误</h3>
 	<p>没有一门编程语言是完美的</p>
 	<ul>
-		<li><code>+</code> 号被同时用作数字的加法，以及字符串的拼接</li>
+		<li><code>+</code> 加号被同时用作数字的加法，以及字符串的拼接</li>
 		<li><code>with</code> 语句</li>
-		<li><code>;</code> 自动插入</li>
+		<li><code>;</code> 分号自动插入</li>
 	</ul>
 </div>
 
@@ -85,14 +94,14 @@
 <div id="structured" class="step">
 	<h3>类似C的结构化编程</h3>
 	<pre><code class="javascript">// 条件语句
-if (lilei.money &gt;= 1e6 &amp;&amp; lilei.house &gt;= 1) {
+if (lilei.money &gt;= 1000000 &amp;&amp; lilei.house &gt;= 1) {
 	lilei.marry(hanmeimei);
 } else {
 	lilei.dieAlone();
 }
 
 // 循环语句
-while (lilei.money &lt; 1e6 &amp;&amp; lilei.house === 0) {
+while (lilei.money &lt; 1000000 &amp;&amp; lilei.house === 0) {
 	lilei.writeCodes();
 }
 
@@ -410,6 +419,55 @@ lilei.sayGoodbye();
 
 console.log(lilei instanceof Person);  // true
 console.log(lilei instanceof Student); // true</code></pre>
+</div>
+
+<div id="how-inheritance-works" class="step">
+	<h4>基于原型的继承是如何实现的？</h4>
+</div>
+
+<div id="prototype-chain" class="step">
+	<h4>原型链 Scope chain</h4>
+	<p>访问一个对象的属性时，会先从自身属性开始，<span class="underline">向上追溯原型链</span>，<br>直到找到这个属性，或者遇到 null 为止</p>
+	<pre><code class="javascript">// lilei --&gt; student --&gt; person --&gt; Object.prototype --&gt; null
+
+var person = {
+	gender: "unkown",
+	sayHello: function() {
+		console.log("Hello world!");
+	},
+	walk: function() {
+		console.log("I am walking");
+	}
+};
+
+var student = Object.create(person);
+
+student.sayHello = function() {
+	console.log("Hello school!");
+};
+student.study = function() {
+	console.log("I am studying!");
+};
+
+var lilei = Object.create(student);
+lilei.gender = "male";
+
+console.log(lilei.gender);
+lilei.walk();
+lilei.sayHello();
+lilei.study();
+
+console.log(person.gender);
+delete lilei.gender;
+console.log(lilei.gender);
+console.log(person.gender);
+
+// lilei --&gt; student --&gt; person --&gt; Object.prototype --&gt; null
+
+console.log(student.isPrototypeOf(lilei)); // true
+console.log(person.isPrototypeOf(student)); // true
+console.log(Object.prototype.isPrototypeOf(person)); // true
+console.log(null === Object.prototype.__proto__); // true</code></pre>
 </div>
 
 <div id="traps" class="step">
@@ -760,8 +818,8 @@ foo();</code></pre>
 
 <div id="quality-tool" class="step">
 	<h3>代码质量工具</h3>
-	<p>JavaScript 中一款优秀的代码质量工具 -- <strong class="red">JSHint</strong></p>
-	<p>它帮助检测 JavaScript 代码的错误和潜在问题</p>
+	<p>我们需要一款优秀的代码质量工具</p>
+	<p>来检测我们的 JavaScript 代码中的错误和潜在问题</p>
 </div>
 
 <div id="jshint" class="step">

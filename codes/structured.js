@@ -1,13 +1,13 @@
 /* global lilei, hanmeimei, company */
 // 条件语句
-if (lilei.money >= 1e6 && lilei.house >= 1) {
+if (lilei.money >= 1000000 && lilei.house >= 1) {
 	lilei.marry(hanmeimei);
 } else {
 	lilei.dieAlone();
 }
 
 // 循环语句
-while (lilei.money < 1e6 && lilei.house === 0) {
+while (lilei.money < 1000000 && lilei.house === 0) {
 	lilei.writeCodes();
 }
 
