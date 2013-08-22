@@ -1,6 +1,12 @@
 # JavaScript 进阶
 
-[点击这里观看幻灯片](http://weareoutman.github.io/advancedJSGuide/)
+[在线演示文稿](http://weareoutman.github.io/advancedJSGuide/)
+[在线普通页面](http://weareoutman.github.io/advancedJSGuide/?impress=no)
+
+## 推荐阅读
++ https://github.com/dypsilon/frontend-dev-bookmarks
+
+**以下内容均为草稿**
 
 ## JavaScript 现状
 

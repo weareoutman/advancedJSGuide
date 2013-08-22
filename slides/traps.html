@@ -13,21 +13,21 @@
 	<p>如何决定一段代码中的 <code>+</code> 是数学运算还是字符串拼接？</p>
 	<pre><code><%= codes.traps_plus_descision %></code></pre>
 	<ul>
-		<li>收集 <code>+</code> 两端的操作数的**原始值**</li>
-		<li>如果其中之一是字符串，则进行字符串拼接</li>
+		<li>收集 <code>+</code> 两端的操作数的<span class="underline">原始值</span></li>
+		<li>如果<span class="underline">其中之一是字符串</span>，则进行字符串拼接</li>
 		<li>否则，执行数学加法</li>
 	</ul>
 </div>
 
 <div id="with" class="step">
 	<h4><code>with</code></h4>
-	<p>将一个语句块的上下文绑定到一个指定对象</p>
+	<p>将一个语句块的上下文绑定为一个指定对象</p>
 	<pre><code class="javascript"><%= codes.with %></code></pre>
 </div>
 
 <div id="dont-use-with" class="step">
 	<h4><code>with</code></h4>
-	<p>不推荐使用 <code>with</code> 语句</p>
+	<p><span class="red">不推荐</span>使用 <code>with</code> 语句</p>
 	<ul>
 		<li>JS 解释器引擎难以对代码执行优化</li>
 		<li>代码可读性差</li>
@@ -43,7 +43,7 @@
 
 <div id="bad-asi" class="step">
 	<h4><code>;</code> 分号自动插入</h4>
-	<p>过于依赖分号自动插入，将带来一些潜在问题</p>
+	<p>过于依赖分号自动插入，将带来一些<span class="underline">潜在问题</span></p>
 	<pre><code class="javascript"><%= codes.bad_asi %></code></pre>
 </div>
 
@@ -61,7 +61,8 @@
 
 <div id="hoisted" class="step">
 	<h4>声明提升</h4>
-	<p>变量的声明、函数的声明将提升到当前函数主体的顶部，而不管这个声明语句是否出现在了不可到达的地方</p>
+	<p>变量、函数的<span class="underline">声明将提升到</span>当前函数主体的<span class="underline">顶部</span>，<br>
+	而<span class="underline">不管</span>这个声明语句<span class="underline">是否</span>出现在了<span class="underline">不可到达</span>的地方</p>
 	<div class="code-2-col">
 		<pre><code class="javascript"><%= codes.hoisting_a %>
 
@@ -78,7 +79,7 @@
 
 <div id="dont-use-eval" class="step">
 	<h4><code>eval</code></h4>
-	<p>不推荐使用 <code>eval</code></p>
+	<p><span class="red">不推荐</span>使用 <code>eval</code></p>
 	<ul>
 		<li>JS 解释器引擎难以对代码执行优化</li>
 		<li><code>eval</code> 中传递的字符串中大多包含用户输入数据，易受攻击</li>
@@ -111,7 +112,7 @@
 
 <div id="anonymous" class="step">
 	<h4><code>arguments.callee</code></h4>
-	<p>不想污染命名空间，匿名函数如何递归？</p>
+	<p>不想<span class="underline">污染命名空间</span>，匿名函数如何递归？</p>
 	<pre><code class="javascript"><%= codes.anonymous %></code></pre>
 </div>
 
@@ -123,11 +124,11 @@
 
 <div id="dont-use-callee" class="step">
 	<h4><code>arguments.callee</code></h4>
-	<p>不推荐使用 <code>arguments.callee</code></p>
+	<p><span class="red">不推荐</span>使用 <code>arguments.callee</code></p>
 	<ul>
 		<li>访问 <code>arguments.callee</code> 的开销是昂贵的</li>
 		<li>使用它将导致 JS 解释器难以执行优化</li>
-		<li>从 ECMAScript 3 开始，已经支持**命名函数表达式**</li>
+		<li>从 ECMAScript 3 开始，已经支持<span class="underline">命名函数表达式</span></li>
 	</ul>
 </div>
 
@@ -135,4 +136,20 @@
 	<h4><code>arguments.callee</code></h4>
 	<p>命名函数表达式</p>
 	<pre><code class="javascript"><%= codes.named_func_expr %></code></pre>
+</div>
+
+
+<div id="traps-summary" class="step">
+	<h3>JavaScript 陷阱</h3>
+	<ul>
+		<li>加号</li>
+		<li>with</li>
+		<li>分号自动插入</li>
+		<li>声明提升</li>
+		<li>eval</li>
+		<li>多行字符串</li>
+		<li>变量泄漏</li>
+		<li>arguments.callee</li>
+		<li>...</li>
+	</ul>
 </div>

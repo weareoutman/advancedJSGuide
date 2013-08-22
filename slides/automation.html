@@ -4,6 +4,35 @@
 	<p>"grunt" 的意思是 "打呼噜"，其目标就是让开发者们一劳永逸</p>
 </div>
 
+<div id="grunt-start" class="step">
+	<h3>开始使用 Grunt</h3>
+	<p>Grunt 运行在 Node.js 平台，Grunt 及其插件都通过 npm 安装和管理</p>
+	<ul>
+		<li>
+			安装 Node.js [<a href="http://nodejs.org/">http://nodejs.org/</a>]
+		</li>
+		<li>
+			安装 grunt-cli 命令行界面
+			<pre><code class="shell">npm install -g grunt-cli</code></pre>
+		</li>
+		<li>
+			在一个已存在的 grunt 项目中使用（已有 <code>package.json</code> 和 <code>Gruntfile.js</code> 文件）
+			<ol>
+				<li>执行 <code>npm install</code> ，安装依赖库</li>
+				<li>执行 <code>grunt</code></li>
+			</ol>
+		</li>
+		<li>
+			准备一个新的 grunt 项目
+			<ul style="list-style-type:none;">
+				<li><code>package.json</code> ：管理作为 npm 模块项目的配置</li>
+				<li><code>Gruntfile.js</code> ：配置、定义、载入 grunt 任务</li>
+				<li><code>npm install &lt;module&gt; --save-dev</code> ：安装一个模块并保存依赖配置到 <code>package.json</code></li>
+			</ul>
+		</li>
+	</ul>
+</div>
+
 <div id="grunt-example" class="step">
 	<h3>Grunt</h3>
 	<p><code>Gruntfile.js</code> 示例</p>

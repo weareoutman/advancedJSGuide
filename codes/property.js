@@ -6,5 +6,6 @@ Person.prototype.sayHello = function() {
 	console.log("Hello world!");
 };
 
-var lilei = new Person();
-var hanmeimei = new Person();
+var lilei = new Person("male");
+console.log(lilei.gender);
+lilei.sayHello();

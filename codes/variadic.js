@@ -7,7 +7,7 @@
 	console.log(arguments instanceof Array); // false
 	console.log(arguments.slice); // undefined
 
-	// 对 arguments 进行数组相关操作
+	// 对 `arguments` 进行数组相关操作
 	var argElse = Array.prototype.slice.call(arguments, 2);
 	console.log(argElse); // [3, 4]
 })(1, 2, 3, 4);
