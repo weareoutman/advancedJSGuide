@@ -1,4 +1,4 @@
-# JavaScript 进阶
+# JavaScript 进阶 [![Build Status](https://travis-ci.org/weareoutman/advancedJSGuide.png)](https://travis-ci.org/weareoutman/advancedJSGuide)
 
 [在线演示文稿](http://weareoutman.github.io/advancedJSGuide/)
 [在线普通页面](http://weareoutman.github.io/advancedJSGuide/?impress=no)
