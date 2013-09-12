@@ -13,6 +13,7 @@
   "author": "weareoutman",
   "license": "MIT",
   "readmeFilename": "README.md",
+  "scripts": { "test": "grunt test" },
   "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-contrib-concat": "~0.3.0",
